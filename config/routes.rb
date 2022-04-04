@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :user_mangas
-  resources :chapters
+  resources :volumes
   resources :mangas
   resources :authors
   resources :users

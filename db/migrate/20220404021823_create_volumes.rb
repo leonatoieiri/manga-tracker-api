@@ -1,6 +1,6 @@
-class CreateChapters < ActiveRecord::Migration[7.0]
+class CreateVolumes < ActiveRecord::Migration[7.0]
   def change
-    create_table :chapters do |t|
+    create_table :volumes do |t|
       t.string :uuid
       t.integer :number
       t.string :cover
