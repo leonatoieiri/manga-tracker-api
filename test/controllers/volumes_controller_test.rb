@@ -11,8 +11,8 @@ class VolumesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create volume" do
-    assert_difference("volume.count") do
-      post volumes_url, params: { volume: { volume_end: @volume.volume_end, volume_start: @volume.volume_start, cover: @volume.cover, manga_id: @volume.manga_id, number: @volume.number, release_date: @volume.release_date, uuid: @volume.uuid } }, as: :json
+    assert_difference("Volume.count") do
+      post volumes_url, params: { volume: { chapter_end: @volume.chapter_end, chapter_start: @volume.chapter_start, cover: @volume.cover, manga_id: @volume.manga_id, number: @volume.number, release_date: @volume.release_date, uuid: @volume.uuid } }, as: :json
     end
 
     assert_response :created
@@ -24,12 +24,12 @@ class VolumesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update volume" do
-    patch volume_url(@volume), params: { volume: { volume_end: @volume.volume_end, volume_start: @volume.volume_start, cover: @volume.cover, manga_id: @volume.manga_id, number: @volume.number, release_date: @volume.release_date, uuid: @volume.uuid } }, as: :json
+    patch volume_url(@volume), params: { volume: { chapter_end: @volume.chapter_end, chapter_start: @volume.chapter_start, cover: @volume.cover, manga_id: @volume.manga_id, number: @volume.number, release_date: @volume.release_date, uuid: @volume.uuid } }, as: :json
     assert_response :success
   end
 
   test "should destroy volume" do
-    assert_difference("volume.count", -1) do
+    assert_difference("Volume.count", -1) do
       delete volume_url(@volume), as: :json
     end
 
