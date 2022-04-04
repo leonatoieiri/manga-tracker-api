@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  number: 1
+  cover: MyString
+  chapter_start: 1.5
+  chapter_end: 1.5
+  release_date: 2022-04-03
+  manga: one
+
+two:
+  uuid: MyString
+  number: 1
+  cover: MyString
+  chapter_start: 1.5
+  chapter_end: 1.5
+  release_date: 2022-04-03
+  manga: two

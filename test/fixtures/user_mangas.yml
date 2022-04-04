@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  chapter_read: 1.5
+  volume_read: 1
+  volume_bought: 1
+  manga: one
+  user: one
+
+two:
+  uuid: MyString
+  chapter_read: 1.5
+  volume_read: 1
+  volume_bought: 1
+  manga: two
+  user: two
