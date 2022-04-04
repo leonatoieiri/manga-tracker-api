@@ -46,6 +46,6 @@ class VolumesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def volume_params
-      params.require(:volume).permit(:uuid, :number, :cover, :volume_start, :volume_end, :release_date, :manga_id)
+      params.require(:volume).permit(:uuid, :number, :cover, :chapter_start, :chapter_end, :release_date, :manga_id)
     end
 end

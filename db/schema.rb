@@ -18,19 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_021902) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "volumes", force: :cascade do |t|
-    t.string "uuid"
-    t.integer "number"
-    t.string "cover"
-    t.float "chapter_start"
-    t.float "chapter_end"
-    t.date "release_date"
-    t.integer "manga_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["manga_id"], name: "index_volumes_on_manga_id"
-  end
-
   create_table "mangas", force: :cascade do |t|
     t.string "uuid"
     t.string "original_title"
@@ -67,9 +54,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_021902) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "volumes", "mangas"
+  create_table "volumes", force: :cascade do |t|
+    t.string "uuid"
+    t.integer "number"
+    t.string "cover"
+    t.float "chapter_start"
+    t.float "chapter_end"
+    t.date "release_date"
+    t.integer "manga_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manga_id"], name: "index_volumes_on_manga_id"
+  end
+
   add_foreign_key "mangas", "authors"
   add_foreign_key "mangas", "users"
   add_foreign_key "user_mangas", "mangas"
   add_foreign_key "user_mangas", "users"
+  add_foreign_key "volumes", "mangas"
 end
