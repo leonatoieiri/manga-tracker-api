@@ -23,14 +23,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_021902) do
     t.string "original_title"
     t.string "en_title"
     t.string "pt_title"
-    t.float "chapters"
-    t.integer "volumes"
-    t.integer "author_id", null: false
-    t.integer "user_id", null: false
+    t.float "released_chapters"
+    t.integer "released_volumes"
+    t.integer "author_id"
+    t.integer "publisher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_mangas_on_author_id"
-    t.index ["user_id"], name: "index_mangas_on_user_id"
+    t.index ["publisher_id"], name: "index_mangas_on_publisher_id"
+  end
+
+  create_table "publishers", force: :cascade do |t|
+    t.string "uuid"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_mangas", force: :cascade do |t|
@@ -68,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_021902) do
   end
 
   add_foreign_key "mangas", "authors"
-  add_foreign_key "mangas", "users"
+  add_foreign_key "mangas", "publishers"
   add_foreign_key "user_mangas", "mangas"
   add_foreign_key "user_mangas", "users"
   add_foreign_key "volumes", "mangas"

@@ -35,6 +35,7 @@ class MangasController < ApplicationController
 
   # DELETE /mangas/1
   def destroy
+    @manga.volumes.destroy_all
     @manga.destroy
   end
 
@@ -46,6 +47,6 @@ class MangasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def manga_params
-      params.require(:manga).permit(:uuid, :original_title, :en_title, :pt_title, :chapters, :volumes, :author_id, :user_id)
+      params.require(:manga).permit(:uuid, :original_title, :en_title, :pt_title, :released_chapters, :released_volumes, :author_id, :user_id)
     end
 end

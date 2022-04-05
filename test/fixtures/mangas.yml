@@ -5,17 +5,17 @@ one:
   original_title: MyString
   en_title: MyString
   pt_title: MyString
-  chapters: 1.5
-  volumes: 1
+  released_chapters: 1.5
+  released_volumes: 1
   author: one
-  user: one
+  publisher: one
 
 two:
   uuid: MyString
   original_title: MyString
   en_title: MyString
   pt_title: MyString
-  chapters: 1.5
-  volumes: 1
+  released_chapters: 1.5
+  released_volumes: 1
   author: two
-  user: two
+  publisher: two

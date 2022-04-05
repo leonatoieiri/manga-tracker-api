@@ -5,10 +5,10 @@ class CreateMangas < ActiveRecord::Migration[7.0]
       t.string :original_title
       t.string :en_title
       t.string :pt_title
-      t.float :chapters
-      t.integer :volumes
-      t.references :author, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
+      t.float :released_chapters
+      t.integer :released_volumes
+      t.references :author, null: true, foreign_key: true
+      t.references :publisher, null: true, foreign_key: true
 
       t.timestamps
     end

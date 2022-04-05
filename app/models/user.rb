@@ -1,5 +1,3 @@
 class User < ApplicationRecord
-    has_many :mangas, dependent: :nullify
-
-    enum :role, [:reader, :publisher, :admin]
+    enum :role, [:reader, :admin]
 end

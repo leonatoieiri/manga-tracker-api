@@ -12,7 +12,7 @@ class MangasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create manga" do
     assert_difference("Manga.count") do
-      post mangas_url, params: { manga: { author_id: @manga.author_id, chapters: @manga.chapters, en_title: @manga.en_title, original_title: @manga.original_title, pt_title: @manga.pt_title, user_id: @manga.user_id, uuid: @manga.uuid, volumes: @manga.volumes } }, as: :json
+      post mangas_url, params: { manga: { author_id: @manga.author_id, released_chapters: @manga.released_chapters, en_title: @manga.en_title, original_title: @manga.original_title, pt_title: @manga.pt_title, publisher_id: @manga.publisher_id, uuid: @manga.uuid, released_volumes: @manga.released_volumes } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class MangasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update manga" do
-    patch manga_url(@manga), params: { manga: { author_id: @manga.author_id, chapters: @manga.chapters, en_title: @manga.en_title, original_title: @manga.original_title, pt_title: @manga.pt_title, user_id: @manga.user_id, uuid: @manga.uuid, volumes: @manga.volumes } }, as: :json
+    patch manga_url(@manga), params: { manga: { author_id: @manga.author_id, released_chapters: @manga.released_chapters, en_title: @manga.en_title, original_title: @manga.original_title, pt_title: @manga.pt_title, publisher_id: @manga.publisher_id, uuid: @manga.uuid, released_volumes: @manga.released_volumes } }, as: :json
     assert_response :success
   end
 
