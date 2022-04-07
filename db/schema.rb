@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_04_021902) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_07_025910) do
   create_table "authors", force: :cascade do |t|
     t.string "uuid"
     t.string "name"
@@ -59,6 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_021902) do
     t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "password_digest"
   end
 
   create_table "volumes", force: :cascade do |t|
