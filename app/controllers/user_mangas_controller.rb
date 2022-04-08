@@ -3,7 +3,7 @@ class UserMangasController < ApplicationController
 
   # GET /user_mangas
   def index
-    @user_mangas = UserManga.all
+    @user_mangas = @current_user.mangas
 
     render json: @user_mangas
   end
