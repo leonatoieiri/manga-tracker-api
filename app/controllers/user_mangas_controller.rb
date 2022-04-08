@@ -16,6 +16,7 @@ class UserMangasController < ApplicationController
   # POST /user_mangas
   def create
     @user_manga = UserManga.new(user_manga_params)
+    @user_manga.user_id = @current_user.id
 
     if @user_manga.save
       render json: @user_manga, status: :created, location: @user_manga
@@ -41,11 +42,11 @@ class UserMangasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_manga
-      @user_manga = UserManga.find(params[:id])
+      @user_manga = UserManga.find_by(id: params[:id], user_id: @current_user.id)
     end
 
     # Only allow a list of trusted parameters through.
     def user_manga_params
-      params.require(:user_manga).permit(:uuid, :chapter_read, :volume_read, :volume_bought, :manga_id, :user_id)
+      params.require(:user_manga).permit(:uuid, :chapter_read, :volume_read, :volume_bought, :manga_id)
     end
 end
