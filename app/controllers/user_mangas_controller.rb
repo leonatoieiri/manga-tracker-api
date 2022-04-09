@@ -3,7 +3,8 @@ class UserMangasController < ApplicationController
 
   # GET /user_mangas
   def index
-    @user_mangas = @current_user.mangas
+    @user_mangas = @current_user.user_mangas.joins(:manga)
+    .select("mangas.original_title, mangas.released_chapters, mangas.released_volumes, user_mangas.id, user_mangas.chapter_read, user_mangas.volume_read, user_mangas.volume_bought")
 
     render json: @user_mangas
   end

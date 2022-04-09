@@ -23,8 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_025910) do
     t.string "original_title"
     t.string "en_title"
     t.string "pt_title"
-    t.float "released_chapters"
-    t.integer "released_volumes"
+    t.float "released_chapters", default: 0.0
+    t.integer "released_volumes", default: 0
     t.integer "author_id"
     t.integer "publisher_id"
     t.datetime "created_at", null: false
@@ -42,9 +42,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_025910) do
 
   create_table "user_mangas", force: :cascade do |t|
     t.string "uuid"
-    t.float "chapter_read"
-    t.integer "volume_read"
-    t.integer "volume_bought"
+    t.float "chapter_read", default: 0.0
+    t.integer "volume_read", default: 0
+    t.integer "volume_bought", default: 0
     t.integer "manga_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
