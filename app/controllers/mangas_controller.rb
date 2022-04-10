@@ -1,6 +1,12 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: %i[ show update destroy ]
 
+  def search
+    @mangas = Manga.search_title(params[:title])
+
+    render json: @mangas
+  end
+
   # GET /mangas
   def index
     @mangas = Manga.all

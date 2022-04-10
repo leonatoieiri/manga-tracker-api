@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   post '/auth/login', to: 'authentication#login'
+
+  post '/mangas/search', to: 'mangas#search'
 end
